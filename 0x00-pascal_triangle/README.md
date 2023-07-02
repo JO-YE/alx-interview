@@ -3,7 +3,8 @@
 
 - In Pascal triangle, each row has a number of elements equal to its row number plus 1.
 	- a row of index 0 has one element, and index 1 will have 2 elements.
- ***In Pascal's Triangle, every row starts and ends with the value 1***
+ 
+ #### ***In Pascal's Triangle, every row starts and ends with the value 1***
 
 ## Task
 ### [0-pascal_triangle](./0-pascal_triangle.py)
