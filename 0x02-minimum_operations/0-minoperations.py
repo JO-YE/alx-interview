@@ -3,6 +3,7 @@
    in exactly `n` `H` characters in the file.
    '''
 
+
 def minOperations(n):
     '''`n` represent the desired number of H characters in the file
         return an integar
