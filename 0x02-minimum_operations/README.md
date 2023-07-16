@@ -44,4 +44,30 @@ In Python, when using range(start, stop), the range starts at start and goes up 
 
 - The `min` method is used to update the value of min_ops to be the minimum between its current value and the value of num_operations.
 
+***Error***
+- using recursion can lead to issues like reaching the maximum recursion depth and consuming a significant amount of memory, especially for large inputs.
+> The failure is due to the size limit of recursion in Python. 
+>
+> Python raises a "RecursionError: maximum recursion depth exceeded."
+
+## SECOND METHOD
+### Prime Factorization Approach:
+- The prime factorization approach involves breaking down the number n into its prime factors and calculating the minimum operations based on those factors.
+
+```
+Step-by-step Explanation:
+
+We start by initializing num_operations to 0 and divisor to 2.
+While n is greater than 1, we perform the following steps:
+Check if n is divisible by divisor.
+If n is divisible, it means divisor is a prime factor of n.
+We divide n by divisor and add divisor to the num_operations counter.
+We continue this process until n becomes 1.
+The final value of num_operations will represent the minimum number of operations needed to achieve the desired number of H characters.
+```
+***the prime factorization approach focuses on finding the prime factors of n and calculating the minimum operations based on those factors.***
+
+> The prime factorization approach simplifies the calculation process by focusing on the key prime factors of n and reduces the complexity of finding the minimum operations.
+
+
 
