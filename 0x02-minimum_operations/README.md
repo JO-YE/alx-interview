@@ -1,6 +1,6 @@
 # 0x02. Minimum Operations
 
-## Details
+## Details [method 1](./0-minoperations1.py)
 ```
 In a text file, there is a single character H. Your text editor can execute only two operations in this file: Copy All and Paste. Given a number n, write a method that calculates the fewest number of operations needed to result in exactly n H characters in the file.
 
@@ -28,7 +28,7 @@ n Python, inf is a floating-point value that represents an unbounded positive va
 The float('inf') syntax is used to create a floating-point representation of positive infinity in Python. When you use float('inf'), you are essentially creating a floating-point number that is larger than any other numeric value, including any finite floating-point number.
 ```
 
-#### The recursive approachn used to solve this problem can be explained as follows:
+#### The recursive approach used to solve this problem can be explained as follows:
 
 > If n is less than or equal to 1, we don't need any operations, and we return 0 as the base case of the recursion.
 >
@@ -51,7 +51,7 @@ In Python, when using range(start, stop), the range starts at start and goes up 
 > Python raises a "RecursionError: maximum recursion depth exceeded."
 
 ## SECOND METHOD
-### Prime Factorization Approach:
+### [Prime Factorization Approach:](./0-minoperations.py)
 - The prime factorization approach involves breaking down the number n into its prime factors and calculating the minimum operations based on those factors.
 
 ```
