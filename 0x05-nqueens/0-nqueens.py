@@ -6,7 +6,8 @@ import sys
 
 def is_queen_conflict(board, row, col, N):
     """
-    Check if placing a queen at the given position conflicts with existing queens.
+    Check if placing a queen at the given position conflicts
+    with existing queens.
 
     Args:
         board (list): The current placement of queens on the board.
@@ -15,7 +16,8 @@ def is_queen_conflict(board, row, col, N):
         N (int): The size of the board.
 
     Returns:
-        bool: True if the position conflicts with existing queens, False otherwise.
+        bool: True if the position conflicts with existing queens,
+        False otherwise.
     """
     # Check if there's a queen in the same row or diagonal
     for i in range(col):
