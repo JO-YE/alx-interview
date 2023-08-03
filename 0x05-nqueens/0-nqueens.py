@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 '''A Python program that solves the N Queens problem for a given N.'''
 
-import sys;
+import sys
 
 
 def is_queen_conflict(board, row, col, N):
@@ -17,7 +17,7 @@ def is_queen_conflict(board, row, col, N):
     Returns:
         bool: True if the position conflicts with existing queens, False otherwise.
     """
-     # Check if there's a queen in the same row or diagonal
+    # Check if there's a queen in the same row or diagonal
     for i in range(col):
         if board[row][i] == 1 or board[row][col - i - 1] == 1:
             return False
@@ -27,6 +27,7 @@ def is_queen_conflict(board, row, col, N):
             return False
     return True
 
+
 def solve_nqueens(N):
     """
     Solve the N Queens problem and return a list of all solutions.
@@ -34,7 +35,7 @@ def solve_nqueens(N):
     """
     board = [[0 for _ in range(N)] for _ in range(N)]
     solutions = []
-    
+
     def solve(row):
         """
         Recursively find solutions by placing queens row by row.
@@ -51,6 +52,7 @@ def solve_nqueens(N):
 
     solve(0)
     return solutions
+
 
 if __name__ == "__main__":
     # Check for correct number of command-line arguments
@@ -70,6 +72,6 @@ if __name__ == "__main__":
 
     solutions = solve_nqueens(N)
 
-     # Print the solutions
+    # Print the solutions
     for solution in solutions:
         print(solution)
