@@ -74,4 +74,4 @@ if __name__ == "__main__":
 
     # Print the solutions
     for solution in solutions:
-        print(solution)
+        print([[row, col] for row, col in enumerate(solution)])
