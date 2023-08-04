@@ -43,7 +43,7 @@ def solve_nqueens(N):
         Recursively find solutions by placing queens row by row.
         """
         if row == N:
-            solutions.append([_[:] for _ in board])
+            solutions.append([(r, c) for r, c in enumerate(board[row])])
             return
 
         for col in range(N):
