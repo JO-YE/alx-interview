@@ -45,7 +45,7 @@ function fetchAndDisplayCharacters (characters) {
         }
 
         if (response.statusCode !== 200) {
-          reject('API Error for ${individualUrl}');
+          console.error(`API Error for ${individualUrl}`);
           return;
         }
 
