@@ -2,11 +2,11 @@
 // A script that prints all characters of a Star Wars movie
 
 // Importing the 'request' module
-const request = require("request");
+const request = require('request');
 
 /* checking if the correct number of arguments is provided */
 if (process.argv.length !== 3) {
-  console.log("Kindly provide your movie ID");
+  console.log('Kindly provide your movie ID');
   process.exit(1);
 }
 
@@ -19,11 +19,11 @@ const url = `https://swapi.dev/api/films/${movieId}/`;
 /* Performing the request to the movie's API endpoint */
 request(url, (error, response, body) => {
   if (error) {
-    console.error("Error:", error);
+    console.error('Error:', error);
     return;
   }
   if (response.statusCode !== 200) {
-    console.error("API Error:", body);
+    console.error('API Error:', body);
     return;
   }
   /* Parsing  the JSON response */
@@ -35,7 +35,7 @@ request(url, (error, response, body) => {
 });
 
 /* Function to fetch and display character names */
-function fetchAndDisplayCharacters(characters) {
+function fetchAndDisplayCharacters (characters) {
   const characterPromises = characters.map((individualUrl) => {
     return new Promise((resolve, reject) => {
       request(individualUrl, (error, response, body) => {
@@ -63,6 +63,6 @@ function fetchAndDisplayCharacters(characters) {
       });
     })
     .catch((error) => {
-      console.error("Error fetching character data:", error);
+      console.error('Error fetching character data:', error);
     });
 }
