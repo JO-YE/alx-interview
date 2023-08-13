@@ -6,7 +6,7 @@ const request = require('request');
 
 /* checking if the correct number of arguments is provided */
 if (process.argv.length !== 3) {
-  console.log('Kindly provide your movie ID');
+  console.error('Kindly provide your movie ID');
   process.exit(1);
 }
 
@@ -19,7 +19,7 @@ const url = `https://swapi.dev/api/films/${movieId}/`;
 /* Performing the request to the movie's API endpoint */
 request(url, (error, response, body) => {
   if (error) {
-    console.error('Error:', error);
+    console.error('Error:', error.message);
     return;
   }
   if (response.statusCode !== 200) {
@@ -31,38 +31,22 @@ request(url, (error, response, body) => {
 
   // Fetching and displaying character names
   const characters = movieData.characters;
-  fetchAndDisplayCharacters(characters);
-});
 
 /* Function to fetch and display character names */
-function fetchAndDisplayCharacters (characters) {
-  const characterPromises = characters.map((individualUrl) => {
-    return new Promise((resolve, reject) => {
-      request(individualUrl, (error, response, body) => {
-        if (error) {
-          reject(error);
-          return;
-        }
+  characters.forEach((characterUrl) => {
+    request(characterUrl, (characterError, characterResponse, characterBody) => {
+      if (characterError) {
+        console.error('Error:', characterError.message);
+        return;
+      }
 
-        if (response.statusCode !== 200) {
-          console.error(`API Error for ${individualUrl}`);
-          return;
-        }
+      if (characterResponse.statusCode !== 200) {
+        console.error(`API request failed with status: ${characterResponse.statusCode}`);
+        return;
+      }
 
-        const characterData = JSON.parse(body);
-        resolve(characterData.name);
-      });
+      const characterData = JSON.parse(characterBody);
+      console.log(characterData.name);
     });
   });
-
-  Promise.all(characterPromises)
-    .then((characterNames) => {
-      /* Displaying character names */
-      characterNames.forEach((name) => {
-        console.log(name);
-      });
-    })
-    .catch((error) => {
-      console.error('Error fetching character data:', error);
-    });
-}
+});
