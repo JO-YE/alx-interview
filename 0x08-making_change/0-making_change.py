@@ -2,6 +2,7 @@
 ''' A fxn that determine the fewest number of coins needed to meet
    a given amount `total`'''
 
+
 def makeChange(coins, total):
     '''Return: fewest number of coins needed to meet `total`
         If total is 0 or less, return 0
@@ -9,14 +10,14 @@ def makeChange(coins, total):
 
         coins: is a list of the value of the coins in your possession
     '''
-    #if the total amount i s0 or less, we need 0 coins
+    # if the total amount i s0 or less, we need 0 coins
     if total <= 0:
         return 0
 
-    # Initialize an array to store the minimum number of coins needed 
+    # Initialize an array to store the minimum number of coins needed
     # for each amount from 0 to total
     dp = [float('inf')] * (total + 1)
-    dp[0] = 0 # It takes 0 coins to make an amount of 0
+    dp[0] = 0  # It takes 0 coins to make an amount of 0
 
     # Iterate through each coin value
     for coin in coins:
